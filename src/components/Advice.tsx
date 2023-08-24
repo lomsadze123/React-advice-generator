@@ -2,21 +2,41 @@ import dice from "../assets/dice.svg";
 import dividerMobile from "../assets/pattern-divider-mobile.svg";
 import dividerDesktop from "../assets/pattern-divider-desktop.svg";
 import { styled } from "styled-components";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+interface AdviceType {
+  id: number;
+  advice: string;
+}
 
 const Advice = () => {
+  const [advice, setAdvice] = useState<AdviceType | null>(null);
+
+  const requestAdvice = async () => {
+    try {
+      const response = await axios.get("https://api.adviceslip.com/advice");
+      const data = response.data;
+      setAdvice(data.slip);
+    } catch (error) {
+      console.log("Error fetching advice:", error);
+    }
+  };
+
+  useEffect(() => {
+    requestAdvice();
+  }, []);
+
   return (
     <Main>
-      <h2>ADVICE #117</h2>
-      <p>
-        “It is easy to sit up and take notice, what's difficult is getting up
-        and taking action.”
-      </p>
+      <h2>ADVICE #{advice?.id}</h2>
+      <p>{advice?.advice}</p>
       <picture>
         <source media="(min-width: 768px)" srcSet={dividerDesktop} />
         <img src={dividerMobile} alt="divider" />
       </picture>{" "}
       <br />
-      <button>
+      <button onClick={requestAdvice} aria-label="Get Advice">
         <img src={dice} alt="dice" />
       </button>
     </Main>
