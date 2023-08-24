@@ -25,3 +25,34 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+# Advice Generator 
+
+The Advice Generator is a React-based web application that fetches random advice from the Advice Slip API and displays it to the user. It provides users with quick and insightful advice on various topics. The application showcases the usage of the useState, useEffect, and axios library to fetch and display data.
+
+## Setup
+1. Clone the Repository: Start by cloning the repository to your local machine using the following command:
+```bash
+git clone https://github.com/lomsadze123/React-advice-generator.git
+
+2. Install Dependencies: Install the project dependencies using npm or yarn:
+```bash
+npm install
+
+3. Start the Application: Run the development server to see the application in action:
+
+```bash
+npm run dev
+
+
+## Built With
+- Semantic HTML5 (TSX)
+- Styled Components
+- Mobile First Approach
+- Media Queries
+- React
+- TypeScript
+- useState Hook
+- useEffect Hook
+- Axios (API)
+
