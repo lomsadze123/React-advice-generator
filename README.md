@@ -34,16 +34,16 @@ The Advice Generator is a React-based web application that fetches random advice
 1. Clone the Repository: Start by cloning the repository to your local machine using the following command:
 ```bash
 git clone https://github.com/lomsadze123/React-advice-generator.git
-
+```
 2. Install Dependencies: Install the project dependencies using npm or yarn:
 ```bash
 npm install
-
+```
 3. Start the Application: Run the development server to see the application in action:
 
 ```bash
 npm run dev
-
+```
 
 ## Built With
 - Semantic HTML5 (TSX)
